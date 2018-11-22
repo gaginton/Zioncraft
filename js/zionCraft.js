@@ -1,7 +1,8 @@
-var zionCraft = {};
-zionCraft.toolSelected = '';
-zionCraft.replace = false;
+var Zioncraft = {};
+Zioncraft.toolSelected = '';
+Zioncraft.replace = false;
 
+<<<<<<< HEAD
 zionCraft.blocks = {
 <<<<<<< HEAD
     'sky': {class: 'sky', data: 'nothing'},
@@ -13,6 +14,9 @@ zionCraft.blocks = {
     'rock': {class: 'rock',data: 'pickaxe'}
  };
 =======
+=======
+Zioncraft.blocks = {
+>>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
     'sky': { class: 'sky', data: 'nothing' },
     'cloud': { class: 'cloud', data: 'nothing' },
     'dirt': { class: 'dirt', data: 'shovel' },
@@ -22,15 +26,19 @@ zionCraft.blocks = {
     'rock': { class: 'rock', data: 'pickaxe' }
 };
 
+<<<<<<< HEAD
 >>>>>>> f42a28558e9910d0f23eb081e4802e4b4c5eb56f
 zionCraft.tools = [
-    { tool: 'axe', src: 'images/axe.png' },
-    { tool: 'pickaxe', src: 'images/pickaxe.png' },
-    { tool: 'shovel', src: 'images/shovel.png' }
+=======
+Zioncraft.tools = [
+>>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
+    { data: 'axe', src: 'images/axe.png' },
+    { data: 'pickaxe', src: 'images/pickaxe.png' },
+    { data: 'shovel', src: 'images/shovel.png' }
 
 ];
 
-zionCraft.matrix = [
+Zioncraft.matrix = [
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'cloud', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'cloud', 'cloud', 'sky', 'sky', 'cloud', 'cloud', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'cloud', 'cloud', 'cloud', 'cloud', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'cloud', 'sky', 'sky', 'sky', 'sky'],
@@ -53,77 +61,83 @@ zionCraft.matrix = [
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt']
 ];
 
+
 $(document). ready(function(){
     init();
     console.log("check");
 
 });
 
-zionCraft.init = function(){
+
+$(document).ready(function () {
+    document.getElementById('playGame').addEventListener('click', Zioncraft.init);
+});
+
+Zioncraft.init = function () {
     $('.container-fluid').css('display', 'none');
     $('#default-board').css('display', 'block');
-    zionCraft.grid();
-    zionCraft.Toolbar();
+    Zioncraft.grid();
+    Zioncraft.Toolbar();
 };
 
-zionCraft.checkMatch = function (selected) {
-    if (zionCraft.replace === false) {
+Zioncraft.checkMatch = function (selected) {
+    if (Zioncraft.replace === false) {
         if (selected.hasClass('sky box') || block.hasClass('cloud box')) {/////for images////
-            zionCraft.incompatibility();///look over function///
+            Zioncraft.incompatibility();///look over function///
         }
         else if (block.attr('data') === $('.toolSelected').attr('tool')) {
-            zionCraft.blockMover(selected);
+            Zioncraft.blockMover(selected);
         }
         else {
-            zionCraft.incompatibility();
+            Zioncraft.incompatibility();
         }
     }
 };
 
-zionCraft.Toolbar = function () {
+Zioncraft.Toolbar = function () {
     var toolArray = $(".toolItem");
     for (var t = 0; t < toolArray.length; t++) {
-        toolArray.eq(t).append("<img src=" + zionCraft.tools[t].src + ">");//see eq//
-        toolArray.eq(t).attr('data', zionCraft.tools[t].data);///see eq//
-        toolArray.eq(t).click(zionCraft.clickTool);
+        toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");//see eq//
+        toolArray.eq(t).attr('data', Zioncraft.tools[t].data);///see eq//
+        toolArray.eq(t).click(Zioncraft.clickTool);
     }
-    $('#itemSelected').click(zionCraft.replaceBlock);
+    $('#itemSelected').click(Zioncraft.replaceBlock);
 };
 
-zionCraft.grid = function () {
+Zioncraft.grid = function () {
     var main = $('#main');
-    for (var i = 0; i < zionCraft.matrix.length; i++) {
-        for (var j = 0; j < zionCraft.matrix[i].length; j++) {
+    for (var i = 0; i < Zioncraft.matrix.length; i++) {
+        for (var j = 0; j < Zioncraft.matrix[i].length; j++) {
             var tile = $('<div/>');
-            tile.addClass(zionCraft.blocks[zionCraft.matrix[i][j]].class)
+            tile.addClass(Zioncraft.blocks[Zioncraft.matrix[i][j]].class)
                 .addClass('box')
-                .attr('data', zionCraft.blocks[zionCraft.matrix[i][j]].data)
-                .click(zionCraft.clickBlock);
+                .attr('data', Zioncraft.blocks[Zioncraft.matrix[i][j]].data)
+                .click(Zioncraft.clickBlock);
             main.append(tile);
 
         }
     }
 };
 
-zionCraft.clickBlock = function () {
+Zioncraft.clickBlock = function () {
     var selected = $(this);
-    zionCraft.checkMatch(selected);
+    Zioncraft.checkMatch(selected);
 };
 
-zionCraft.clickTool = function () {
-    zionCraft.replace = false;
+Zioncraft.clickTool = function () {
+    Zioncraft.replace = false;
     $('.toolItem').removeClass('toolSelected');
     $(this).toggleClass('toolSelected');
 };
 
-zionCraft.incompatibility = function () {
+Zioncraft.incompatibility = function () {
     $('.toolSelected').addClass('incorrectSelection');
     setTimeout(function () {
         $('.toolSelected').removeClass('incorrectSelection');
     }, 200);
 };
 
-zionCraft.blockMover = function (selected) {
+Zioncraft.blockMover = function (selected) {
     if (blockSelected.not('sky box')) {
         var itemSelectedBox = $("#itemSelected");
         itemSelectedBox.attr('class', selected.attr('class'));
@@ -132,27 +146,25 @@ zionCraft.blockMover = function (selected) {
     }
 };
 
-zionCraft.blockAdder = function () {
+Zioncraft.blockAdder = function () {
     var selected = $(this);
-    selected.attr('class', zionCraft.newClass);
-    selected.attr('data', zionCraft.newData);
+    selected.attr('class', Zioncraft.newClass);
+    selected.attr('data', Zioncraft.newData);
     $('#itemSelected').removeClass();
-    $('.box').not('#itemSelected').unbind('click', zionCraft.blockAdder);
+    $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
 };
 
-<<<<<<< HEAD
-zionCraft.replaceBlock = function() {
-=======
-zionCraft.replaceBlock = function () {
->>>>>>> f42a28558e9910d0f23eb081e4802e4b4c5eb56f
+
+
+Zioncraft.replaceBlock = function () {
     zioneCraft.newData = null;
-    zionCraft.newClass = null;
+    Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
     $('.toolItem').removeClass('toolSelected');
-    zionCraft.replace = true;
-    zionCraft.newClass = itemSelected.attr('class');
-    zionCraft.newData = itemSelected.attr('data');
-    $('.box').not('#itemSelected').click(zionCraft.blockAdder);
+    Zioncraft.replace = true;
+    Zioncraft.newClass = itemSelected.attr('class');
+    Zioncraft.newData = itemSelected.attr('data');
+    $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
 };
 
 
