@@ -1,3 +1,5 @@
+$(document).ready
+
 var MyCraft = {};
 
 MyCraft.rows = 15;
@@ -6,6 +8,7 @@ MyCraft.cols = 20;
 MyCraft.grid = [];
 
 MyCraft.tiles = {
+	sand: 'images/sand.jpg',
 	cactus: 'images/cactus.png',
 	dirt: 'images/dirt.png',
 	grass: 'images/grass.png',
