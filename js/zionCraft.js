@@ -56,10 +56,10 @@ Zioncraft.init = function () {
 
 Zioncraft.checkMatch = function (selected) {
     if (Zioncraft.replace === false) {
-        if (selected.hasClass('sky box') || block.hasClass('cloud box')) {/////for images////
+        if (selected.hasClass('sky box') || selected.hasClass('cloud box')) {    /////for images////
             Zioncraft.incompatibility();///look over function///
         }
-        else if (block.attr('data') === $('.toolSelected').attr('data')) {
+        else if (selected.attr('data') === $('.toolSelected').attr('data')) {
             Zioncraft.blockMover(selected);
         }
         else {
@@ -111,7 +111,7 @@ Zioncraft.incompatibility = function () {
 };
 
 Zioncraft.blockMover = function (selected) {
-    if (blockSelected.not('sky box')) {
+    if (selected.not('sky box')) {
         var itemSelectedBox = $("#itemSelected");
         itemSelectedBox.attr('class', selected.attr('class'));
         itemSelectedBox.attr('data', selected.attr('data'));
