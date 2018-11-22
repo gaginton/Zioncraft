@@ -31,7 +31,10 @@ Zioncraft.blocks = {
 zionCraft.tools = [
 =======
 Zioncraft.tools = [
+<<<<<<< HEAD
 >>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
+=======
+>>>>>>> 74a4b337ded54afeab73ce5272a5dc65ee1d6c16
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' }
@@ -76,6 +79,7 @@ $(document).ready(function () {
 Zioncraft.init = function () {
     $('.container-fluid').css('display', 'none');
     $('#default-board').css('display', 'block');
+    $('#toolsContain').css('display', 'block');
     Zioncraft.grid();
     Zioncraft.Toolbar();
 };
@@ -85,7 +89,7 @@ Zioncraft.checkMatch = function (selected) {
         if (selected.hasClass('sky box') || block.hasClass('cloud box')) {/////for images////
             Zioncraft.incompatibility();///look over function///
         }
-        else if (block.attr('data') === $('.toolSelected').attr('tool')) {
+        else if (block.attr('data') === $('.toolSelected').attr('data')) {
             Zioncraft.blockMover(selected);
         }
         else {
@@ -114,7 +118,6 @@ Zioncraft.grid = function () {
                 .attr('data', Zioncraft.blocks[Zioncraft.matrix[i][j]].data)
                 .click(Zioncraft.clickBlock);
             main.append(tile);
-
         }
     }
 };
@@ -166,5 +169,3 @@ Zioncraft.replaceBlock = function () {
     Zioncraft.newData = itemSelected.attr('data');
     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
 };
-
-
