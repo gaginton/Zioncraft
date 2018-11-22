@@ -2,9 +2,8 @@ var Zioncraft = {};
 Zioncraft.toolSelected = '';
 Zioncraft.replace = false;
 
-<<<<<<< HEAD
-zionCraft.blocks = {
-<<<<<<< HEAD
+
+Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
     'cloud':{class: 'cloud',data: 'nothing'},
     'dirt':{class: 'dirt',data: 'shovel'},
@@ -14,19 +13,7 @@ zionCraft.blocks = {
     'rock': {class: 'rock',data: 'pickaxe'}
  };
 
-Zioncraft.blocks = {
->>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
-    'sky': { class: 'sky', data: 'nothing' },
-    'cloud': { class: 'cloud', data: 'nothing' },
-    'dirt': { class: 'dirt', data: 'shovel' },
-    'grass': { class: 'grass', data: 'shovel' },
-    'leaf': { class: 'leaf', data: 'axe' },
-    'tree': { class: 'tree', data: 'axe' },
-    'rock': { class: 'rock', data: 'pickaxe' }
-};
 
-
-zionCraft.tools = [
 
 Zioncraft.tools = [
 
