@@ -15,8 +15,7 @@ Zioncraft.blocks = {
 Zioncraft.tools = [
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
-    { data: 'shovel', src: 'images/shovel.png' }
-
+    { data: 'shovel', src: 'images/shovel.png' },
 ];
 
 Zioncraft.matrix = [

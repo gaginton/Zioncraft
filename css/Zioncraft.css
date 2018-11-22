@@ -44,7 +44,7 @@ body {
 
 
 
-
+/* 
 #tutorial{
     position:absolute;
     z-index: 11;
@@ -60,7 +60,7 @@ body {
     text-align: center;
     font-size: 20px;
     padding: 10px 10px 10px 10px;
-}
+} */
 
 #default-board, #toolsContain {
     display: none;
