@@ -128,7 +128,7 @@ body {
 }
 
 .cloud{
-    background-color: #ffffff;
+    background-color:url("../images/cloud_image.png");
 }
 
 .dirt{
@@ -149,6 +149,11 @@ body {
 
 .tree{
     background-image: url('../images/tree.png');
+}
+.cactus {
+    background-image: url('../images/cactus.png');
+
+
 }
 
 #container-game {

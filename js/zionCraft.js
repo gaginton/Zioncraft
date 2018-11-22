@@ -5,13 +5,12 @@ Zioncraft.replace = false;
 
 Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
-    'cloud': {class: 'cloud', data: 'nothing'},
-    'dirt': {class: 'dirt', data: 'shovel'},
-    'grass': {class: 'grass', data: 'shovel'},
-    'leaf': {class: 'leaf', data: 'axe'},
-    'tree': {class: 'tree', data: 'axe'},
-    'cactus': {class: 'cactus', data: 'pickaxe'},
-    'rock': {class: 'rock', data: 'pickaxe'}
+    'cloud':{class: 'cloud',data: 'clouds'},
+    'dirt':{class: 'dirt',data: 'shovel'},
+    'grass': {class: 'grass',data: 'shovel'},
+    'leaf': {class: 'leaf',data: 'axe'},
+    'tree': {class: 'tree',data: 'axe'},
+    'rock': {class: 'rock',data: 'pickaxe'}
  };
 
 
@@ -23,9 +22,9 @@ Zioncraft.tools = [
 ];
 
 Zioncraft.matrix = [
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
