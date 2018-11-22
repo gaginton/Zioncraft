@@ -51,24 +51,25 @@ zionCraft.init = function(){
     zionCraft.grid();
     zionCraft.Toolbar();
 };
+
 zionCraft.checkMatch = function(selected){
-   if (zionCraft.replace === false){
-       //if (Selectblock.hasClass('sky box')|| block.hasClass('cloud box')) {/////for images////
-          // mineCraft.incompatibility();
+   if (zionCraft.replace === false) {
+       if (selected.hasClass('sky box')|| block.hasClass('cloud box')) {/////for images////
+          zionCraft.incompatibility();///look over function///
        }
        else if (block.attr('data') === $('.toolSelected').attr('tool')) {
            zionCraft.blockMover(selected);
        }
        else {
-          // zionCraft.incompatibility();
+           zionCraft.incompatibility();
        }
-   }
 };
+
 zionCraft.Toolbar = function(){
     var toolArray = $(".toolItem");
     for(var t=0;t<toolArray.length; t++ ){
-      //  toolArray.eq(t).append("<img src=" + mineCraft.tools[t].src+">") ;
-       // toolArray.eq(t).attr('data', mineCraft.tools[t].data);
+      toolArray.eq(t).append("<img src=" + zionCraft.tools[t].src+">") ;//see eq//
+       toolArray.eq(t).attr('data', zionCraft.tools[t].data);///see eq//
         toolArray.eq(t).click(zionCraft.clickTool);
     }
     $('#itemSelected').click(zionCraft.replaceBlock);
@@ -96,12 +97,14 @@ zionCraft.clickTool = function (){
         $('.toolItem').removeClass('toolSelected');
         $(this).toggleClass('toolSelected');
 };
-//zionCraft.incompatibility = function(){
+
+zionCraft.incompatibility = function(){
     $('.toolSelected').addClass('incorrectSelection');
     setTimeout(function(){
         $('.toolSelected').removeClass('incorrectSelection');
     },200);
 };
+
 zionCraft.blockMover = function(selected){
     if (blockSelected.not('sky box')) {
         var itemSelectedBox = $("#itemSelected");

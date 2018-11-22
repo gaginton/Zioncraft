@@ -2,7 +2,7 @@ var zionCraft = {};
 zionCraft.toolSelected = '';
 zionCraft.replace = false;
 
-zionraft.blocks = {
+zionCraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
     'cloud':{class: 'cloud',data: 'nothing'},
     'dirt':{class: 'dirt',data: 'shovel'},
