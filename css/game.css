@@ -5,6 +5,7 @@
 #toolbar {
 	display: inline-flex;
 	padding: 20px;
+
 }
 
 .tileImage, .toolImage, .tileImage img, .toolImage img  {

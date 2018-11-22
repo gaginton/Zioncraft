@@ -2,17 +2,21 @@ var Zioncraft = {};
 Zioncraft.toolSelected = '';
 Zioncraft.replace = false;
 
+
 Zioncraft.blocks = {
-    'sky': { class: 'sky', data: 'nothing' },
-    'cloud': { class: 'cloud', data: 'nothing' },
-    'dirt': { class: 'dirt', data: 'shovel' },
-    'grass': { class: 'grass', data: 'shovel' },
-    'leaf': { class: 'leaf', data: 'axe' },
-    'tree': { class: 'tree', data: 'axe' },
-    'rock': { class: 'rock', data: 'pickaxe' }
-};
+    'sky': {class: 'sky', data: 'nothing'},
+    'cloud':{class: 'cloud',data: 'nothing'},
+    'dirt':{class: 'dirt',data: 'shovel'},
+    'grass': {class: 'grass',data: 'shovel'},
+    'leaf': {class: 'leaf',data: 'axe'},
+    'tree': {class: 'tree',data: 'axe'},
+    'rock': {class: 'rock',data: 'pickaxe'}
+ };
+
+
 
 Zioncraft.tools = [
+
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' },
@@ -40,6 +44,14 @@ Zioncraft.matrix = [
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt'],
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt']
 ];
+
+
+$(document). ready(function(){
+    init();
+    console.log("check");
+
+});
+
 
 $(document).ready(function () {
     document.getElementById('playGame').addEventListener('click', Zioncraft.init);
@@ -125,6 +137,8 @@ Zioncraft.blockAdder = function () {
     $('#itemSelected').removeClass();
     $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
 };
+
+
 
 Zioncraft.replaceBlock = function () {
     zioneCraft.newData = null;
