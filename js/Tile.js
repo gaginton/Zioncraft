@@ -4,19 +4,22 @@ class Tile {
 		this.y = y;
 		this.tileType = tileType;
 		this.element = element;
-		
+
 		this.setTile(tileType);
 	}
 }
 
-Tile.prototype.setBackground = function() {
+Tile.prototype.setBackground = function () {
 	$(this.element).css('background-image', 'url("' + this.tile + '")');
 }
 
-Tile.prototype.setTile = function(tileType) {
+Tile.prototype.setTile = function (tileType) {
 	this.tileType = tileType;
 
 	switch (this.tileType) {
+		case 'cactus':
+			this.tile = MyCraft.tiles.cactus;
+			break;
 		case 'dirt':
 			this.tile = MyCraft.tiles.dirt;
 			break;
@@ -43,7 +46,7 @@ Tile.prototype.setTile = function(tileType) {
 	this.setBackground();
 }
 
-Tile.prototype.toObj = function() {
+Tile.prototype.toObj = function () {
 	let tile = {};
 
 	tile.x = this.x;
@@ -55,7 +58,7 @@ Tile.prototype.toObj = function() {
 	return tile;
 }
 
-Tile.prototype.loadFromObj = function(tile) {
+Tile.prototype.loadFromObj = function (tile) {
 	this.x = tile.x;
 	this.y = tile.y;
 	this.tileType = tile.tileType;

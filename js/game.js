@@ -7,6 +7,7 @@ function checkToolAbility(tile) {
 }
 
 function updateInventory() {
+	var cactus = $('#cactusInventory')
 	var dirt = $('#dirtInventory');
 	var grass = $('#grassInventory');
 	var leaf = $('#leafInventory');
@@ -14,6 +15,7 @@ function updateInventory() {
 	var rock = $('#rockInventory');
 	var bird = $('#birdInventory');
 
+	cactus.html(MyCraft.inventory.cactus);
 	dirt.html(MyCraft.inventory.dirt);
 	grass.html(MyCraft.inventory.grass);
 	leaf.html(MyCraft.inventory.leaf);
