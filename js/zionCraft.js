@@ -13,8 +13,7 @@ zionCraft.blocks = {
     'tree': {class: 'tree',data: 'axe'},
     'rock': {class: 'rock',data: 'pickaxe'}
  };
-=======
-=======
+
 Zioncraft.blocks = {
 >>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
     'sky': { class: 'sky', data: 'nothing' },
@@ -26,15 +25,11 @@ Zioncraft.blocks = {
     'rock': { class: 'rock', data: 'pickaxe' }
 };
 
-<<<<<<< HEAD
->>>>>>> f42a28558e9910d0f23eb081e4802e4b4c5eb56f
+
 zionCraft.tools = [
-=======
+
 Zioncraft.tools = [
-<<<<<<< HEAD
->>>>>>> 4f68e924b9567100ac30d0c541346763a4b254bb
-=======
->>>>>>> 74a4b337ded54afeab73ce5272a5dc65ee1d6c16
+
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' }
