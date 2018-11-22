@@ -5,23 +5,21 @@ Zioncraft.replace = false;
 
 Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
-    'cloud':{class: 'cloud',data: 'nothing'},
-    'dirt':{class: 'dirt',data: 'shovel'},
-    'grass': {class: 'grass',data: 'shovel'},
-    'leaf': {class: 'leaf',data: 'axe'},
-    'tree': {class: 'tree',data: 'axe'},
-    'rock': {class: 'rock',data: 'pickaxe'}
+    'cloud': {class: 'cloud', data: 'nothing'},
+    'dirt': {class: 'dirt', data: 'shovel'},
+    'grass': {class: 'grass', data: 'shovel'},
+    'leaf': {class: 'leaf', data: 'axe'},
+    'tree': {class: 'tree', data: 'axe'},
+    'cactus': {class: 'cactus', data: 'pickaxe'},
+    'rock': {class: 'rock', data: 'pickaxe'}
  };
 
 
-
 Zioncraft.tools = [
-
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' },
     { data: 'clouds', src: 'images/cloud_image.png' }
-
 ];
 
 Zioncraft.matrix = [
@@ -49,15 +47,15 @@ Zioncraft.matrix = [
 
 
 $(document). ready(function(){
-    init();
+    Zioncraft.init();
     console.log("check");
-
 });
 
 
 $(document).ready(function () {
     document.getElementById('playGame').addEventListener('click', Zioncraft.init);
 });
+
 
 Zioncraft.init = function () {
     $('.container-fluid').css('display', 'none');
@@ -67,10 +65,11 @@ Zioncraft.init = function () {
     Zioncraft.Toolbar();
 };
 
+
 Zioncraft.checkMatch = function (selected) {
     if (Zioncraft.replace === false) {
-        if (selected.hasClass('sky box') || selected.hasClass('cloud box')) {    /////for images////
-            Zioncraft.incompatibility();///look over function///
+        if (selected.hasClass('sky box') || selected.hasClass('cloud box')) {       /////for images////
+            Zioncraft.incompatibility();        ///look over function///
         }
         else if (selected.attr('data') === $('.toolSelected').attr('data')) {
             Zioncraft.blockMover(selected);
@@ -81,15 +80,18 @@ Zioncraft.checkMatch = function (selected) {
     }
 };
 
+
 Zioncraft.Toolbar = function () {
+    console.log('adfsjksdjdfpaf00');
     var toolArray = $(".toolItem");
     for (var t = 0; t < toolArray.length; t++) {
-        toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");//see eq//
-        toolArray.eq(t).attr('data', Zioncraft.tools[t].data);///see eq//
+        toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");     //see eq//
+        toolArray.eq(t).attr('data', Zioncraft.tools[t].data);      ///see eq//
         toolArray.eq(t).click(Zioncraft.clickTool);
     }
     $('#itemSelected').click(Zioncraft.replaceBlock);
 };
+
 
 Zioncraft.grid = function () {
     var main = $('#main');
@@ -110,11 +112,13 @@ Zioncraft.clickBlock = function () {
     Zioncraft.checkMatch(selected);
 };
 
+
 Zioncraft.clickTool = function () {
     Zioncraft.replace = false;
     $('.toolItem').removeClass('toolSelected');
     $(this).toggleClass('toolSelected');
 };
+
 
 Zioncraft.incompatibility = function () {
     $('.toolSelected').addClass('incorrectSelection');
@@ -122,6 +126,7 @@ Zioncraft.incompatibility = function () {
         $('.toolSelected').removeClass('incorrectSelection');
     }, 200);
 };
+
 
 Zioncraft.blockMover = function (selected) {
     if (selected.not('sky box')) {
@@ -132,6 +137,7 @@ Zioncraft.blockMover = function (selected) {
     }
 };
 
+
 Zioncraft.blockAdder = function () {
     var selected = $(this);
     selected.attr('class', Zioncraft.newClass);
@@ -141,8 +147,8 @@ Zioncraft.blockAdder = function () {
 };
 
 
-
 Zioncraft.replaceBlock = function () {
+    console.log("adjapofjapdsf")
     zioneCraft.newData = null;
     Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
