@@ -5,20 +5,19 @@ Zioncraft.replace = false;
 
 Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
-    'cloud':{class: 'cloud',data: 'clouds'},
-    'dirt':{class: 'dirt',data: 'shovel'},
-    'grass': {class: 'grass',data: 'shovel'},
-    'leaf': {class: 'leaf',data: 'axe'},
-    'tree': {class: 'tree',data: 'axe'},
-    'rock': {class: 'rock',data: 'pickaxe'}
+    'cloud': {class: 'cloud', data: 'clouds'},
+    'dirt': {class: 'dirt', data: 'shovel'},
+    'grass': {class: 'grass', data: 'shovel'},
+    'leaf': {class: 'leaf', data: 'axe'},
+    'tree': {class: 'tree', data: 'axe'},
+    'rock': {class: 'rock', data: 'pickaxe'}
  };
 
 
 Zioncraft.tools = [
-    { data: 'axe', src: 'images/axe.png' },
-    { data: 'pickaxe', src: 'images/pickaxe.png' },
-    { data: 'shovel', src: 'images/shovel.png' },
-    { data: 'clouds', src: 'images/cloud_image.png' }
+    {data: 'axe', src: 'images/axe.png' },
+    {data: 'pickaxe', src: 'images/pickaxe.png' },
+    {data: 'shovel', src: 'images/shovel.png' },
 ];
 
 Zioncraft.matrix = [
@@ -43,12 +42,6 @@ Zioncraft.matrix = [
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt'],
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt']
 ];
-
-
-$(document). ready(function(){
-    Zioncraft.init();
-    console.log("check");
-});
 
 
 $(document).ready(function () {
@@ -81,7 +74,6 @@ Zioncraft.checkMatch = function (selected) {
 
 
 Zioncraft.Toolbar = function () {
-    console.log('adfsjksdjdfpaf00');
     var toolArray = $(".toolItem");
     for (var t = 0; t < toolArray.length; t++) {
         toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");     //see eq//
@@ -147,7 +139,6 @@ Zioncraft.blockAdder = function () {
 
 
 Zioncraft.replaceBlock = function () {
-    console.log("adjapofjapdsf")
     zioneCraft.newData = null;
     Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
