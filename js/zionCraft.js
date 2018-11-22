@@ -2,7 +2,7 @@ var zionCraft = {};
 zionCraft.toolSelected = '';
 zionCraft.replace = false;
 
-zionraft.blocks = {
+zionCraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
     'cloud':{class: 'cloud',data: 'nothing'},
     'dirt':{class: 'dirt',data: 'shovel'},
@@ -42,11 +42,12 @@ zionCraft.matrix = [
 
 $(document). read(function(){
     init();
+    console.log("check");
 
 });
 
 zionCraft.init = function(){
-    $('#container-fluid').css('display', 'none');
+    $('.container-fluid').css('display', 'none');
     $('#default-board').css('display', 'block');
     zionCraft.grid();
     zionCraft.Toolbar();
@@ -120,6 +121,7 @@ zionCraft.blockAdder = function(){
     $('#itemSelected').removeClass();
     $('.box').not('#itemSelected').unbind('click', zionCraft.blockAdder);
 };
+
 zionCraft.replaceBlock = function() {
     zioneCraft.newData = null;
     zionCraft.newClass = null;
