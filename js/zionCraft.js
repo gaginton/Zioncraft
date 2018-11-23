@@ -14,7 +14,7 @@ Zioncraft.blocks = {
     'tree': { class: 'tree', data: 'axe' },
     'rock': { class: 'rock', data: 'pickaxe' },
     'sky': { class: 'sky', data: 'nothing' },
-    'cloud': { class: 'cloud', data: 'clouds' },
+    'cloud': { class: 'cloud', data: 'nothing' },
 };
 
 
@@ -143,7 +143,6 @@ Zioncraft.blockAdder = function () {
     var selectedBlock = $(this);
     selectedBlock.attr('class', Zioncraft.newClass);
     selectedBlock.attr('data', Zioncraft.newData);
-    $('#itemSelected').removeClass();
     $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
 };
 
@@ -162,59 +161,87 @@ Zioncraft.blockAdder = function () {
 
 
 Zioncraft.clickCactus = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "cactus box";
-    Zioncraft.newData = "fire";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.cactus > 0) {
+        Zioncraft.inventory.cactus -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "cactus box";
+        Zioncraft.newData = "fire";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickDirt = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "dirt box";
-    Zioncraft.newData = "shovel";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.dirt > 0) {
+        Zioncraft.inventory.dirt -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "dirt box";
+        Zioncraft.newData = "shovel";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickGrass = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "grass box";
-    Zioncraft.newData = "shovel";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.grass > 0) {
+        Zioncraft.inventory.grass -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "grass box";
+        Zioncraft.newData = "shovel";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickLeaf = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "leaf box";
-    Zioncraft.newData = "axe";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.leaf > 0) {
+        Zioncraft.inventory.leaf -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "leaf box";
+        Zioncraft.newData = "axe";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickTree = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "tree box";
-    Zioncraft.newData = "axe";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.tree > 0) {
+        Zioncraft.inventory.tree -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "tree box";
+        Zioncraft.newData = "axe";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickRock = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "rock box";
-    Zioncraft.newData = "pickaxe";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.rock > 0) {
+        Zioncraft.inventory.rock -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "rock box";
+        Zioncraft.newData = "pickaxe";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 Zioncraft.clickCloud = function () {
-    Zioncraft.newData = null;
-    Zioncraft.newClass = null;
-    Zioncraft.newClass = "box";
-    Zioncraft.newData = "";
-    $('.box').not('inventory').click(Zioncraft.blockAdder);
+    if (Zioncraft.inventory.cloud > 0) {
+        Zioncraft.inventory.cloud -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "cloud box";
+        Zioncraft.newData = "";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
 };
 
 var counter = 0;
