@@ -50,7 +50,6 @@ Zioncraft.matrix = [
 
 $(document).ready(function () {
     document.getElementById('playGame').addEventListener('click', Zioncraft.init);
-    console.log("check button");
 });
 
 
@@ -72,7 +71,13 @@ Zioncraft.Toolbar = function () {
         toolArray.eq(i).attr('data', Zioncraft.tools[i].data);      ///see eq//
         toolArray.eq(i).click(Zioncraft.clickTool);
     }
-    $('#itemSelected').click(Zioncraft.replaceBlock);
+    $('.inventory.cactus').click(Zioncraft.clickCactus);
+    $('.inventory.dirt').click(Zioncraft.clickDirt);
+    $('.inventory.grass').click(Zioncraft.clickGrass);
+    $('.inventory.leaf').click(Zioncraft.clickLeaf);
+    $('.inventory.tree').click(Zioncraft.clickTree);
+    $('.inventory.rock').click(Zioncraft.clickRock);
+    $('.inventory.cloud').click(Zioncraft.clickCloud);
 };
 
 
@@ -126,9 +131,9 @@ Zioncraft.incompatibility = function () {
 
 Zioncraft.blockMover = function (selectedBlock) {
     if (selectedBlock.not('sky box')) {
-        var itemSelectedBox = $("#itemSelected");
-        itemSelectedBox.attr('class', selectedBlock.attr('class'));
-        itemSelectedBox.attr('data', selectedBlock.attr('data'));
+        var selectedBox = $("#itemSelected");
+        selectedBox.attr('class', selectedBlock.attr('class'));
+        selectedBox.attr('data', selectedBlock.attr('data'));
         selectedBlock.attr('class', 'sky box');
     }
 };
@@ -143,35 +148,93 @@ Zioncraft.blockAdder = function () {
 };
 
 
-Zioncraft.replaceBlock = function () {
-    console.log("replaceBlock func");
+// Zioncraft.replaceBlock = function () {
+//     Zioncraft.newData = null;
+//     Zioncraft.newClass = null;
+//     var itemSelected = $('#itemSelected');
+//     $('.toolItem').removeClass('toolSelected');
+//     Zioncraft.replace = true;
+//     Zioncraft.newClass = itemSelected.attr('class');
+//     Zioncraft.newData = itemSelected.attr('data');
+//     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
+//     console.log(Zioncraft);
+// };
+
+
+Zioncraft.clickCactus = function () {
     Zioncraft.newData = null;
     Zioncraft.newClass = null;
-    var itemSelected = $('#itemSelected');
-    $('.toolItem').removeClass('toolSelected');
-    Zioncraft.replace = true;
-    Zioncraft.newClass = itemSelected.attr('class');
-    Zioncraft.newData = itemSelected.attr('data');
-    $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
+    Zioncraft.newClass = "cactus box";
+    Zioncraft.newData = "fire";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
 };
 
+Zioncraft.clickDirt = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "dirt box";
+    Zioncraft.newData = "shovel";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
 
+Zioncraft.clickGrass = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "grass box";
+    Zioncraft.newData = "shovel";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
+
+Zioncraft.clickLeaf = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "leaf box";
+    Zioncraft.newData = "axe";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
+
+<<<<<<< HEAD
+
+=======
+Zioncraft.clickTree = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "tree box";
+    Zioncraft.newData = "axe";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
+
+Zioncraft.clickRock = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "rock box";
+    Zioncraft.newData = "pickaxe";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
+
+Zioncraft.clickCloud = function () {
+    Zioncraft.newData = null;
+    Zioncraft.newClass = null;
+    Zioncraft.newClass = "box";
+    Zioncraft.newData = "";
+    $('.box').not('inventory').click(Zioncraft.blockAdder);
+};
+
+var counter = 0;
+>>>>>>> c758dbd5eb67f682152bc75b0dd801324626d986
 //CREATE INVENTORY
 Zioncraft.inventory = {
-    cactus:9,
+    cactus: 9,
     dirt: 9,
     grass: 9,
     leaf: 9,
     tree: 9,
     rock: 9,
     cloud: 9,
-
-    
 };
 
 
-
- function updateInventoryNo() {
+function updateInventoryNo() {
     var cactus = $('#cactusInventoryNo');
     var dirt = $('#dirtInventoryNo');
     var grass = $('#grassInventoryNo');

@@ -164,3 +164,10 @@ element.style {
 #container-game {
     display: flex;
 }
+
+span {
+    font-size: 10vh;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 1vw;
+}
