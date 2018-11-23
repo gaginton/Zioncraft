@@ -1,15 +1,22 @@
 body {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 	background-image: url("../images/background-image.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
     background-color: black;
     font-family:"Minecraft Regular";
+    margin: 0;
+}
+
+element.style {
+    padding: auto;
 }
 
 .justify-content-center {
-	margin-top: 10%; 
+    margin-top: 10%; 
+    display: flex;
 }
 
 .btn {
@@ -62,7 +69,7 @@ body {
     padding: 10px 10px 10px 10px;
 } */
 
-#default-board, #toolsContain {
+#default-board, #toolsContain, #blocksContain {
     display: none;
 }
 
@@ -73,21 +80,18 @@ body {
     margin: 0 12% 0 12%;
 }
 
-#toolsContain{
-    background-color: #000000;
-    height: 660px;
-    width: 230px;
+#toolsContain, #blocksContain {
+    background-color:sienna;
     position: relative;
+    padding: 2%;
+    height: 100%;
+    opacity: 0.8;
 }
 
 .toolItem{
     border-style: dashed;
     border-color: lightgrey;
-    width:128px;
-    height:128px;
-    margin: auto;
-    margin-top: 28px;
-    margin-bottom: 28px;
+    margin-bottom: 5%;
 }
 
 .toolItem img{
@@ -103,14 +107,25 @@ body {
     background-color: red;
 }
 
-#itemSelected{
+#itemSelected {
     border-style: solid;
     border-color: lightgrey;
-    width:80px;height:80px;
-    margin: 0 33% 0 33%!important;
+    margin: 0 33% 0 33%;
+    height: 12vh;
+    width: 12vh;
+    background-size: contain;
 }
 
-.box{
+.itemSelected {
+    border-style: solid;
+    border-color: lightgrey;
+    margin: 0 33% 0 33%;
+    height: 12vh;
+    width: 12vh;
+    background-size: contain;
+}
+
+.box {
     height:33px;
     width:33px;
     background-size: contain;
@@ -128,7 +143,8 @@ body {
 }
 
 .cloud {
-    background-color:url("../images/cloud_image.png");
+    background-image: url("../images/cloud_image.png");
+    background-color: #8dbfff;
 }
 
 .dirt{
@@ -152,8 +168,6 @@ body {
 }
 .cactus {
     background-image: url('../images/cactus.png');
-
-
 }
 
 #container-game {
