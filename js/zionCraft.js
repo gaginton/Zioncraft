@@ -110,14 +110,45 @@ Zioncraft.clickBlock = function () {
 
 //CHECKMATCH FUNCTION ONLY ALLOWS TOOLS TO WORK ON APPROPRIATE BLOCKS
 
-//WHAT WE NEED TO FIX - WHY IS IT NOT READING BLOCKCLASS WHEN ADDED TO INVENTORY???? 
+//ISSUE WITH GETTING STRING VALUE OF "ZIONCRAFT.INVENTORY.(BLOCKCLASS)
+//READS AS STRING --> CAN NOT ADJUST INVENTORY VALUES USING STRING --> 
+//USING IF STATEMENTS TO COMPARE STRING TO STRING VALUE OF INVENTORY
 Zioncraft.checkMatch = function (selectedBlock) {
     if (Zioncraft.replace === false) {
         var blockClass = selectedBlock.attr('class').replace(" box", "");
-        console.log(blockClass);
-        console.log(Zioncraft.inventory.blockClass);
-        // Zioncraft.inventory.blockClass += 1;
-        // updateInventoryNo();
+        var inventoryName = "Zioncraft.inventory." + blockClass;
+        console.log(inventoryName)
+
+        if (inventoryName === "Zioncraft.inventory.cactus") {
+            Zioncraft.inventory.cactus += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.dirt") {
+            Zioncraft.inventory.dirt += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.grass") {
+            Zioncraft.inventory.grass += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.leaf") {
+            Zioncraft.inventory.leaf += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.tree") {
+            Zioncraft.inventory.tree += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.rock") {
+            Zioncraft.inventory.rock += 1;
+            updateInventoryNo();
+        }
+        else if (inventoryName === "Zioncraft.inventory.cloud") {
+            Zioncraft.inventory.cloud += 1;
+            updateInventoryNo();
+        }
+
+        //REST OF CODE
         if (selectedBlock.attr('data') === $('.toolSelected').attr('data')) {
 
             Zioncraft.blockMover(selectedBlock);
