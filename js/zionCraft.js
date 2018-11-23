@@ -187,6 +187,4 @@ Zioncraft.inventory = {
     tree.html(Zioncraft.inventory.tree);
     rock.html(Zioncraft.inventory.rock);
     cloud.html(Zioncraft.inventory.bird);
-
-}
-
+};
