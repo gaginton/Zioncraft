@@ -1,11 +1,10 @@
-//LIBRARY USED THROUGHOUT GAME. CONTAINS TOOLS AND BLOCKS
+//DICTINARY USED THROUGHOUT GAME.
 var Zioncraft = {};
 Zioncraft.toolSelected = '';
 //REPLACE BECOMES TRUE WHEN.....
-Zioncraft.replace = false;
+// Zioncraft.replace = false;
 
-//BLOCKS CLASS REPRESENT WHAT THEY ARE. DATA IS USED TO 
-//IDENTIFY TOOLS THAT REMOVE BLOCKS
+//BLOCKS CLASS REPRESENT WHAT THEY ARE. DATA IS USED TO IDENTIFY WHICH TOOLS CAN BE USED TO REMOVE A BLOCK
 Zioncraft.blocks = {
     'cactus': { class: 'cactus', data: 'fire' },
     'dirt': { class: 'dirt', data: 'shovel' },
@@ -48,11 +47,14 @@ Zioncraft.matrix = [
 ];
 
 
+//INITIALIZE GAME AFTER DOM IS LOADED SINCE WE USE JQUERY
 $(document).ready(function () {
     document.getElementById('playGame').addEventListener('click', Zioncraft.init);
 });
 
-
+//INIT CHANGES DISPLAYS SO MODALS DONT SHOW AND GAME DOES
+//ALSO CREATES INITIAL GRID BASED ON ARRAY AND TOOLBAR
+//CURRENTLY TOOL-TOOLBAR ARE DYNAMIC BUT BOXES-TOOLBAR ARE NOT
 Zioncraft.init = function () {
     $('.container-fluid').css('display', 'none');
     $('#default-board').css('display', 'block');
@@ -64,13 +66,15 @@ Zioncraft.init = function () {
 };
 
 
+//EQ REFERENCES CHILD, WHICH INCREASES BASED ON I
 Zioncraft.Toolbar = function () {
     var toolArray = $(".toolItem");
     for (var i = 0; i < toolArray.length; i++) {
-        toolArray.eq(i).append("<img src=" + Zioncraft.tools[i].src + ">");     //see eq//
-        toolArray.eq(i).attr('data', Zioncraft.tools[i].data);      ///see eq//
+        toolArray.eq(i).append("<img src=" + Zioncraft.tools[i].src + ">");
+        toolArray.eq(i).attr('data', Zioncraft.tools[i].data);
         toolArray.eq(i).click(Zioncraft.clickTool);
     }
+    //SHOULD ADD FOR LOOP TO BUILD SIMILAR BOX INVENTORY
     $('.inventory.cactus').click(Zioncraft.clickCactus);
     $('.inventory.dirt').click(Zioncraft.clickDirt);
     $('.inventory.grass').click(Zioncraft.clickGrass);
@@ -81,6 +85,7 @@ Zioncraft.Toolbar = function () {
 };
 
 
+//CREATE GRID BASED ON GRID WE MADE ABOVE
 Zioncraft.grid = function () {
     var main = $('#main');
     for (var i = 0; i < Zioncraft.matrix.length; i++) {
@@ -96,9 +101,25 @@ Zioncraft.grid = function () {
 };
 
 
+//WHEN YOU CLICK A BLOCK, RUN CHECKMATCH FUNCTION
+Zioncraft.clickBlock = function () {
+    var selectedBlock = $(this);
+    Zioncraft.checkMatch(selectedBlock);
+};
+
+
+//CHECKMATCH FUNCTION ONLY ALLOWS TOOLS TO WORK ON APPROPRIATE BLOCKS
+
+//WHAT WE NEED TO FIX - WHY IS IT NOT READING BLOCKCLASS WHEN ADDED TO INVENTORY???? 
 Zioncraft.checkMatch = function (selectedBlock) {
     if (Zioncraft.replace === false) {
+        var blockClass = selectedBlock.attr('class').replace(" box", "");
+        console.log(blockClass);
+        console.log(Zioncraft.inventory.blockClass);
+        // Zioncraft.inventory.blockClass += 1;
+        // updateInventoryNo();
         if (selectedBlock.attr('data') === $('.toolSelected').attr('data')) {
+
             Zioncraft.blockMover(selectedBlock);
         }
         else {
@@ -108,19 +129,11 @@ Zioncraft.checkMatch = function (selectedBlock) {
 };
 
 
-Zioncraft.clickBlock = function () {
-    var selectedBlock = $(this);
-    Zioncraft.checkMatch(selectedBlock);
-};
+// var blockClass = $(this).attr("class").replace(" box", "");
 
 
-Zioncraft.clickTool = function () {
-    Zioncraft.replace = false;
-    $('.toolItem').removeClass('toolSelected');
-    $(this).toggleClass('toolSelected');
-};
 
-
+//IF TOOL WAS USED ON INCORRECT BLOCK
 Zioncraft.incompatibility = function () {
     $('.toolSelected').addClass('incorrectSelection');
     setTimeout(function () {
@@ -129,6 +142,15 @@ Zioncraft.incompatibility = function () {
 };
 
 
+//CHANGES TOOL SELECTED TO WHICHEVER TOOL USER CLICKS ON
+Zioncraft.clickTool = function () {
+    Zioncraft.replace = false;
+    $('.toolItem').removeClass('toolSelected');
+    $(this).toggleClass('toolSelected');
+};
+
+
+// ------------ CHECK OUT CODE --------------//
 Zioncraft.blockMover = function (selectedBlock) {
     if (selectedBlock.not('sky box')) {
         var selectedBox = $("#itemSelected");
@@ -139,12 +161,14 @@ Zioncraft.blockMover = function (selectedBlock) {
 };
 
 
+//ADDS BLOCK SELECTED TO GAMEBOARD, WHEN GAMEBOARD IS CLICKED
 Zioncraft.blockAdder = function () {
     var selectedBlock = $(this);
     selectedBlock.attr('class', Zioncraft.newClass);
     selectedBlock.attr('data', Zioncraft.newData);
     $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
 };
+
 
 
 // Zioncraft.replaceBlock = function () {
@@ -244,7 +268,7 @@ Zioncraft.clickCloud = function () {
     updateInventoryNo()
 };
 
-var counter = 0;
+
 //CREATE INVENTORY
 Zioncraft.inventory = {
     cactus: 9,
