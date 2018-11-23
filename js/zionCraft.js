@@ -5,7 +5,7 @@ Zioncraft.replace = false;
 
 Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
-    'cloud':{class: 'cloud',data: 'clouds'},
+    'cloud':{class: 'cloud',data: 'nothing'},
     'dirt':{class: 'dirt',data: 'shovel'},
     'grass': {class: 'grass',data: 'shovel'},
     'leaf': {class: 'leaf',data: 'axe'},
@@ -18,7 +18,8 @@ Zioncraft.tools = [
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' },
-    { data: 'clouds', src: 'images/cloud_image.png' }
+    { data: 'cloud', src: 'images/cloud_image.png' },
+
 ];
 
 Zioncraft.matrix = [
@@ -148,7 +149,7 @@ Zioncraft.blockAdder = function () {
 
 Zioncraft.replaceBlock = function () {
     console.log("adjapofjapdsf")
-    zioneCraft.newData = null;
+    Zioncraft.newData = null;
     Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
     $('.toolItem').removeClass('toolSelected');
