@@ -5,21 +5,36 @@ Zioncraft.replace = false;
 
 Zioncraft.blocks = {
     'sky': {class: 'sky', data: 'nothing'},
+<<<<<<< HEAD
     'cloud':{class: 'cloud',data: 'nothing'},
     'dirt':{class: 'dirt',data: 'shovel'},
     'grass': {class: 'grass',data: 'shovel'},
     'leaf': {class: 'leaf',data: 'axe'},
     'tree': {class: 'tree',data: 'axe'},
     'rock': {class: 'rock',data: 'pickaxe'}
+=======
+    'cloud': {class: 'cloud', data: 'clouds'},
+    'dirt': {class: 'dirt', data: 'shovel'},
+    'grass': {class: 'grass', data: 'shovel'},
+    'leaf': {class: 'leaf', data: 'axe'},
+    'tree': {class: 'tree', data: 'axe'},
+    'rock': {class: 'rock', data: 'pickaxe'}
+>>>>>>> 1f134ec43569f90abce2d2496c07a53595fe44f7
  };
 
 
 Zioncraft.tools = [
+<<<<<<< HEAD
     { data: 'axe', src: 'images/axe.png' },
     { data: 'pickaxe', src: 'images/pickaxe.png' },
     { data: 'shovel', src: 'images/shovel.png' },
     { data: 'cloud', src: 'images/cloud_image.png' },
 
+=======
+    {data: 'axe', src: 'images/axe.png' },
+    {data: 'pickaxe', src: 'images/pickaxe.png' },
+    {data: 'shovel', src: 'images/shovel.png' },
+>>>>>>> 1f134ec43569f90abce2d2496c07a53595fe44f7
 ];
 
 Zioncraft.matrix = [
@@ -44,12 +59,6 @@ Zioncraft.matrix = [
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt'],
     ['dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt', 'dirt']
 ];
-
-
-$(document). ready(function(){
-    Zioncraft.init();
-    console.log("check");
-});
 
 
 $(document).ready(function () {
@@ -82,7 +91,6 @@ Zioncraft.checkMatch = function (selected) {
 
 
 Zioncraft.Toolbar = function () {
-    console.log('adfsjksdjdfpaf00');
     var toolArray = $(".toolItem");
     for (var t = 0; t < toolArray.length; t++) {
         toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");     //see eq//
@@ -148,8 +156,12 @@ Zioncraft.blockAdder = function () {
 
 
 Zioncraft.replaceBlock = function () {
+<<<<<<< HEAD
     console.log("adjapofjapdsf")
     Zioncraft.newData = null;
+=======
+    zioneCraft.newData = null;
+>>>>>>> 1f134ec43569f90abce2d2496c07a53595fe44f7
     Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
     $('.toolItem').removeClass('toolSelected');
