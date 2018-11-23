@@ -164,8 +164,9 @@ Zioncraft.inventory = {
     tree: 9,
     rock: 9,
     cloud: 9,
-};
 
+
+};
 
 Zioncraft.updateInventoryNo() = function () {
     var cactus = $('#cactusInventoryNo');
