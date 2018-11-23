@@ -155,7 +155,7 @@ Zioncraft.replaceBlock = function () {
     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
 };
 
-var counter=0;
+
 //CREATE INVENTORY
 Zioncraft.inventory = {
     cactus:9,
