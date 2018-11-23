@@ -7,23 +7,24 @@ Zioncraft.replace = false;
 //BLOCKS CLASS REPRESENT WHAT THEY ARE. DATA IS USED TO 
 //IDENTIFY TOOLS THAT REMOVE BLOCKS
 Zioncraft.blocks = {
-    'cactus': {class: 'cactus', data: 'fire' },
-    'dirt': {class: 'dirt', data: 'shovel' },
-    'grass': {class: 'grass', data: 'shovel' },
-    'leaf': {class: 'leaf', data: 'axe' },
-    'tree': {class: 'tree', data: 'axe' },
-    'rock': {class: 'rock', data: 'pickaxe' },
-    'sky': {class: 'sky', data: 'nothing' },
-    'cloud': {class: 'cloud', data: 'clouds' },
+    'cactus': { class: 'cactus', data: 'fire' },
+    'dirt': { class: 'dirt', data: 'shovel' },
+    'grass': { class: 'grass', data: 'shovel' },
+    'leaf': { class: 'leaf', data: 'axe' },
+    'tree': { class: 'tree', data: 'axe' },
+    'rock': { class: 'rock', data: 'pickaxe' },
+    'sky': { class: 'sky', data: 'nothing' },
+    'cloud': { class: 'cloud', data: 'clouds' },
 };
 
 
 Zioncraft.tools = [
-    {data: 'axe', src: 'images/axe.png' },
-    {data: 'fire', src: 'images/fire.png' },
-    {data: 'pickaxe', src: 'images/pickaxe.png' },
-    {data: 'shovel', src: 'images/shovel.png' },
+    { data: 'axe', src: 'images/axe.png' },
+    { data: 'fire', src: 'images/fire.png' },
+    { data: 'pickaxe', src: 'images/pickaxe.png' },
+    { data: 'shovel', src: 'images/shovel.png' },
 ];
+
 
 Zioncraft.matrix = [
     ['sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
@@ -59,6 +60,7 @@ Zioncraft.init = function () {
     $('#blocksContain').css('display', 'block');
     Zioncraft.grid();
     Zioncraft.Toolbar();
+    Zioncraft.updateInventoryNo();
 };
 
 
@@ -151,3 +153,34 @@ Zioncraft.replaceBlock = function () {
     Zioncraft.newData = itemSelected.attr('data');
     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
 };
+
+
+//CREATE INVENTORY
+Zioncraft.inventory = {
+    cactus: 9,
+    dirt: 9,
+    grass: 9,
+    leaf: 9,
+    tree: 9,
+    rock: 9,
+    cloud: 9,
+};
+
+
+Zioncraft.updateInventoryNo() = function () {
+    var cactus = $('#cactusInventoryNo');
+    var dirt = $('#dirtInventoryNo');
+    var grass = $('#grassInventoryNo');
+    var leaf = $('#leafInventoryNo');
+    var tree = $('#treeInventoryNo');
+    var rock = $('#rockInventoryNo');
+    var cloud = $('#cloudInventoryNo');
+
+    cactus.html(Zioncraft.inventory.cactus);
+    dirt.html(Zioncraft.inventory.dirt);
+    grass.html(Zioncraft.inventory.grass);
+    leaf.html(Zioncraft.inventory.leaf);
+    tree.html(Zioncraft.inventory.tree);
+    rock.html(Zioncraft.inventory.rock);
+    cloud.html(Zioncraft.inventory.bird);
+}
