@@ -7,20 +7,20 @@ Zioncraft.replace = false;
 //BLOCKS CLASS REPRESENT WHAT THEY ARE. DATA IS USED TO 
 //IDENTIFY TOOLS THAT REMOVE BLOCKS
 Zioncraft.blocks = {
-    'sky': {class: 'sky', data: 'nothing'},
-    'cactus': {class: 'cactus', data: 'fire'},
-    'cloud': {class: 'cloud', data: 'clouds'},
-    'dirt': {class: 'dirt', data: 'shovel'},
-    'grass': {class: 'grass', data: 'shovel'},
-    'leaf': {class: 'leaf', data: 'axe'},
-    'tree': {class: 'tree', data: 'axe'},
-    'rock': {class: 'rock', data: 'pickaxe'}
- };
+    'cactus': {class: 'cactus', data: 'fire' },
+    'dirt': {class: 'dirt', data: 'shovel' },
+    'grass': {class: 'grass', data: 'shovel' },
+    'leaf': {class: 'leaf', data: 'axe' },
+    'tree': {class: 'tree', data: 'axe' },
+    'rock': {class: 'rock', data: 'pickaxe' },
+    'sky': {class: 'sky', data: 'nothing' },
+    'cloud': {class: 'cloud', data: 'clouds' },
+};
 
 
 Zioncraft.tools = [
     {data: 'axe', src: 'images/axe.png' },
-    {data: 'fire', src: 'images/fire.png'},
+    {data: 'fire', src: 'images/fire.png' },
     {data: 'pickaxe', src: 'images/pickaxe.png' },
     {data: 'shovel', src: 'images/shovel.png' },
 ];
@@ -62,27 +62,12 @@ Zioncraft.init = function () {
 };
 
 
-Zioncraft.checkMatch = function (selectedBock) {
-    if (Zioncraft.replace === false) {
-        if (selectedBock.hasClass('sky box') || selectedBock.hasClass('cloud box')) {       /////for images////
-            Zioncraft.incompatibility();        ///look over function///
-        }
-        else if (selectedBock.attr('data') === $('.toolSelected').attr('data')) {
-            Zioncraft.blockMover(selectedBock);
-        }
-        else {
-            Zioncraft.incompatibility();
-        }
-    }
-};
-
-
 Zioncraft.Toolbar = function () {
     var toolArray = $(".toolItem");
-    for (var t = 0; t < toolArray.length; t++) {
-        toolArray.eq(t).append("<img src=" + Zioncraft.tools[t].src + ">");     //see eq//
-        toolArray.eq(t).attr('data', Zioncraft.tools[t].data);      ///see eq//
-        toolArray.eq(t).click(Zioncraft.clickTool);
+    for (var i = 0; i < toolArray.length; i++) {
+        toolArray.eq(i).append("<img src=" + Zioncraft.tools[i].src + ">");     //see eq//
+        toolArray.eq(i).attr('data', Zioncraft.tools[i].data);      ///see eq//
+        toolArray.eq(i).click(Zioncraft.clickTool);
     }
     $('#itemSelected').click(Zioncraft.replaceBlock);
 };
@@ -102,9 +87,22 @@ Zioncraft.grid = function () {
     }
 };
 
+
+Zioncraft.checkMatch = function (selectedBlock) {
+    if (Zioncraft.replace === false) {
+        if (selectedBlock.attr('data') === $('.toolSelected').attr('data')) {
+            Zioncraft.blockMover(selectedBlock);
+        }
+        else {
+            Zioncraft.incompatibility();
+        }
+    }
+};
+
+
 Zioncraft.clickBlock = function () {
-    var selectedBock = $(this);
-    Zioncraft.checkMatch(selectedBock);
+    var selectedBlock = $(this);
+    Zioncraft.checkMatch(selectedBlock);
 };
 
 
@@ -123,27 +121,28 @@ Zioncraft.incompatibility = function () {
 };
 
 
-Zioncraft.blockMover = function (selectedBock) {
-    if (selectedBock.not('sky box')) {
+Zioncraft.blockMover = function (selectedBlock) {
+    if (selectedBlock.not('sky box')) {
         var itemSelectedBox = $("#itemSelected");
-        itemSelectedBox.attr('class', selectedBock.attr('class'));
-        itemSelectedBox.attr('data', selectedBock.attr('data'));
-        selectedBock.attr('class', 'sky box');
+        itemSelectedBox.attr('class', selectedBlock.attr('class'));
+        itemSelectedBox.attr('data', selectedBlock.attr('data'));
+        selectedBlock.attr('class', 'sky box');
     }
 };
 
 
 Zioncraft.blockAdder = function () {
-    var selectedBock = $(this);
-    selectedBock.attr('class', Zioncraft.newClass);
-    selectedBock.attr('data', Zioncraft.newData);
+    var selectedBlock = $(this);
+    selectedBlock.attr('class', Zioncraft.newClass);
+    selectedBlock.attr('data', Zioncraft.newData);
     $('#itemSelected').removeClass();
     $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
 };
 
 
 Zioncraft.replaceBlock = function () {
-    zioneCraft.newData = null;
+    console.log("replaceBlock func");
+    Zioncraft.newData = null;
     Zioncraft.newClass = null;
     var itemSelected = $('#itemSelected');
     $('.toolItem').removeClass('toolSelected');
