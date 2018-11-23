@@ -50,6 +50,7 @@ Zioncraft.matrix = [
 
 $(document).ready(function () {
     document.getElementById('playGame').addEventListener('click', Zioncraft.init);
+    console.log("check button");
 });
 
 
@@ -60,7 +61,7 @@ Zioncraft.init = function () {
     $('#blocksContain').css('display', 'block');
     Zioncraft.grid();
     Zioncraft.Toolbar();
-    Zioncraft.updateInventoryNo();
+    updateInventoryNo();
 };
 
 
@@ -154,10 +155,10 @@ Zioncraft.replaceBlock = function () {
     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
 };
 
-
+var counter=0;
 //CREATE INVENTORY
 Zioncraft.inventory = {
-    cactus: 9,
+    cactus:9,
     dirt: 9,
     grass: 9,
     leaf: 9,
@@ -165,10 +166,12 @@ Zioncraft.inventory = {
     rock: 9,
     cloud: 9,
 
-
+    
 };
 
-Zioncraft.updateInventoryNo() = function () {
+
+
+ function updateInventoryNo() {
     var cactus = $('#cactusInventoryNo');
     var dirt = $('#dirtInventoryNo');
     var grass = $('#grassInventoryNo');
@@ -184,4 +187,6 @@ Zioncraft.updateInventoryNo() = function () {
     tree.html(Zioncraft.inventory.tree);
     rock.html(Zioncraft.inventory.rock);
     cloud.html(Zioncraft.inventory.bird);
+
 }
+
