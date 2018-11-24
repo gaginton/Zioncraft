@@ -1,9 +1,9 @@
 body {
 	width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
     background-image: url("../images/background-image.jpg");
-	background-position: center center;
+	background-position: center;
 	background-repeat: no-repeat;
     background-color: black;
     font-family:"Minecraft Regular";
@@ -11,11 +11,26 @@ body {
     position: relative;
 }
 
+/* NOT WORKING :(  */
+/* @media only screen and (max-width: 600px) {
+    body {
+        display: inline;
+    }
+    #container-game {
+        display: inline;
+    }
+    
+    #toolsContain, #blocksContain {
+        display: inline-flex;
+    }
+
+} */
+
 .modal{
-    font-family: 'Chakra Petch', sans-serif;
+    font-family:"Minecraft Regular", 'Chakra Petch', sans-serif;
     background-color: rgb(173, 165, 165); 
-    min-width: 500px;
-    min-height: 200px;
+    min-width: 50vw;
+    min-height: 50vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,22 +39,25 @@ body {
     border-radius: 5px;
     border: 5px solid black;
     display:none;
-    
 }
+
+h2 {
+    margin-top: 0;
+}
+
 .close{
     background-color: red;
-    padding:10px;
+    padding: 10px;
     border: 2px solid black;
     position:absolute; 
-    top:0;
-    right:0;
-    float:right;
-    display:block;
-    
+    top: 0;
+    right: 0;
+    float: right;
+    display: block;   
 }
+
 .close:hover{
     background-color: white;
-
 }
 
 element.style {
@@ -69,37 +87,13 @@ element.style {
 #zioncraftLogo {
 	width: 75%;
 	margin: auto;
-	margin-top: 10vh;
+	padding-top: 8vh;
 	display: block;
 }
 
 #playGame {
-	float: right;
+    margin-left: 15vw;
 }
-
-
-
-
-
-
-
-/* 
-#tutorial{
-    position:absolute;
-    z-index: 11;
-    top: 5%;
-    bottom:70%;
-    left: 5%;
-    right: 70%;
-    background-color: grey;
-    display: none;
-    border-radius: 5px;
-    color: white;
-    font-family:"Minecraft Regular";
-    text-align: center;
-    font-size: 20px;
-    padding: 10px 10px 10px 10px;
-} */
 
 #default-board, #toolsContain, #blocksContain {
     display: none;
@@ -109,30 +103,29 @@ element.style {
     width: 660px;
     height: 660px;
     display:inline-block;
-    margin: 0 12% 0 12%;
+    margin: 4% 12% 0 12%;
 }
 
 #toolsContain, #blocksContain {
     background-color:sienna;
     position: relative;
     padding: 2%;
-    height: 100%;
     opacity: 0.8;
     
   
 }
 
-
-
 .toolItem{
     border-style: dashed;
     border-color: lightgrey;
     margin-bottom: 5%;
+    width: 20vh;
+    height: 20vh;
 }
 
 .toolItem img{
-    width:120px;
-    height:120px;
+    width: 20vh;
+    height: 20vh;
 }
 
 .toolSelected{
@@ -143,7 +136,7 @@ element.style {
     background-color: red;
 }
 
-#itemSelected, .inventory {
+.inventory {
     border-style: solid;
     border-color: lightgrey;
     margin: 0 20% 0 20%;
@@ -152,10 +145,9 @@ element.style {
     background-size: contain;
 }
 
-
 .box {
-    height:33px;
-    width:33px;
+    height: 33px;
+    width: 33px;
     background-size: contain;
     display: inline-block;
     margin-right: 0;
@@ -203,7 +195,7 @@ element.style {
 }
 
 span {
-    font-size: 9vh;
+    font-size: 7vh;
     font-weight: bold;
     text-align: center;
     margin-left: .5vw;
@@ -219,7 +211,7 @@ span {
         width:22px;
     }
     span{
-        font-size:7vh;
+        font-size:6vh;
     }
   
 }

@@ -6,35 +6,35 @@ Zioncraft.toolSelected = '';
 
 //BLOCKS CLASS REPRESENT WHAT THEY ARE. DATA IS USED TO IDENTIFY WHICH TOOLS CAN BE USED TO REMOVE A BLOCK
 Zioncraft.blocks = {
-    'cactus': { class: 'cactus', data: 'fire' },
-    'dirt': { class: 'dirt', data: 'shovel' },
-    'grass': { class: 'grass', data: 'shovel' },
-    'leaf': { class: 'leaf', data: 'axe' },
-    'tree': { class: 'tree', data: 'axe' },
-    'rock': { class: 'rock', data: 'pickaxe' },
-    'sky': { class: 'sky', data: 'nothing' },
-    'cloud': { class: 'cloud', data: 'nothing' },
+    'cactus': {class: 'cactus', data: 'fire'},
+    'dirt': {class: 'dirt', data: 'shovel'},
+    'grass': {class: 'grass', data: 'shovel'},
+    'leaf': {class: 'leaf', data: 'axe'},
+    'tree': {class: 'tree', data: 'axe'},
+    'rock': {class: 'rock', data: 'pickaxe'},
+    'sky': {class: 'sky', data: 'nothing'},
+    'cloud': {class: 'cloud', data: 'nothing'},
 };
 
 
 Zioncraft.tools = [
-    { data: 'axe', src: 'images/axe.png' },
-    { data: 'fire', src: 'images/fire.png' },
-    { data: 'pickaxe', src: 'images/pickaxe.png' },
-    { data: 'shovel', src: 'images/shovel.png' },
+    {data: 'axe', src: 'images/axe.png'},
+    {data: 'fire', src: 'images/fire.png'},
+    {data: 'pickaxe', src: 'images/pickaxe.png'},
+    {data: 'shovel', src: 'images/shovel.png'},
 ];
 
 
 Zioncraft.matrix = [
     ['sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
     ['sky', 'sky', 'cloud', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'sky', 'sky'],
-    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'sky', 'sky'],
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'sky', 'sky', 'sky'],
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf'],
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf', 'sky'],
+    ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf', 'leaf'],
     ['sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'leaf', 'leaf', 'leaf', 'sky', 'sky'],
     ['sky', 'cactus', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'tree', 'sky', 'sky', 'sky'],
     ['sky', 'cactus', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'cactus', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'sky', 'tree', 'sky', 'sky', 'sky'],
@@ -154,6 +154,7 @@ Zioncraft.checkMatch = function (selectedBlock) {
             Zioncraft.inventory.rock += 1;
             updateInventoryNo();
         }
+        //DID NOT ADD TOOL TO ALLOW CLOUD MINING -- THIS IS NOT NECESSARY FOR NOW
         else if (inventoryName === "Zioncraft.inventory.cloud") {
             Zioncraft.inventory.cloud += 1;
             updateInventoryNo();
@@ -161,11 +162,7 @@ Zioncraft.checkMatch = function (selectedBlock) {
 
         //REST OF CODE
         if (selectedBlock.attr('data') === $('.toolSelected').attr('data')) {
-
             Zioncraft.blockMover(selectedBlock);
-
-
-
         }
         else {
             Zioncraft.incompatibility();
@@ -180,7 +177,6 @@ Zioncraft.clickBlock = function () {
 
 
 };
-
 
 
 //IF TOOL WAS USED ON INCORRECT BLOCK
@@ -200,15 +196,10 @@ Zioncraft.clickTool = function () {
 };
 
 
-// ------------ CHECK OUT CODE --------------//
+//WHEN YOU MINE BLOCK TURN SELECTEDBLOCK TO CLASS SKY BOX
 Zioncraft.blockMover = function (selectedBlock) {
     if (selectedBlock.not('sky box')) {
-        var selectedBox = $("#itemSelected");
-        selectedBox.attr('class', selectedBlock.attr('class'));
-        selectedBox.attr('data', selectedBlock.attr('data'));
         selectedBlock.attr('class', 'sky box');
-
-
     }
 };
 
@@ -218,23 +209,9 @@ Zioncraft.blockAdder = function () {
     var selectedBlock = $(this);
     selectedBlock.attr('class', Zioncraft.newClass);
     selectedBlock.attr('data', Zioncraft.newData);
-    $('.box').not('#itemSelected').unbind('click', Zioncraft.blockAdder);
+    $('.box').unbind('click', Zioncraft.blockAdder);
 
 };
-
-
-
-// Zioncraft.replaceBlock = function () {
-//     Zioncraft.newData = null;
-//     Zioncraft.newClass = null;
-//     var itemSelected = $('#itemSelected');
-//     $('.toolItem').removeClass('toolSelected');
-//     Zioncraft.replace = true;
-//     Zioncraft.newClass = itemSelected.attr('class');
-//     Zioncraft.newData = itemSelected.attr('data');
-//     $('.box').not('#itemSelected').click(Zioncraft.blockAdder);
-//     console.log(Zioncraft);
-// };
 
 
 Zioncraft.clickCactus = function () {
@@ -285,6 +262,43 @@ Zioncraft.clickLeaf = function () {
     }
     updateInventoryNo()
 };
+
+Zioncraft.clickTree = function () {
+    if (Zioncraft.inventory.tree > 0) {
+        Zioncraft.inventory.tree -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "tree box";
+        Zioncraft.newData = "axe";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
+};
+
+Zioncraft.clickRock = function () {
+    if (Zioncraft.inventory.rock > 0) {
+        Zioncraft.inventory.rock -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "rock box";
+        Zioncraft.newData = "pickaxe";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
+};
+
+Zioncraft.clickCloud = function () {
+    if (Zioncraft.inventory.cloud > 0) {
+        Zioncraft.inventory.cloud -= 1;
+        Zioncraft.newData = null;
+        Zioncraft.newClass = null;
+        Zioncraft.newClass = "cloud box";
+        Zioncraft.newData = "";
+        $('.box').not('inventory').click(Zioncraft.blockAdder);
+    }
+    updateInventoryNo()
+};
+
 
 //CREATE INVENTORY
 Zioncraft.inventory = {
