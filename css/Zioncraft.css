@@ -118,7 +118,7 @@ element.style {
     padding: 2%;
     height: 100%;
     opacity: 0.8;
-   
+    
   
 }
 
@@ -146,9 +146,9 @@ element.style {
 #itemSelected, .inventory {
     border-style: solid;
     border-color: lightgrey;
-    margin: 0 33% 0 33%;
-    height: 12vh;
-    width: 12vh;
+    margin: 0 20% 0 20%;
+    height: 10vh;
+    width: 8vh;
     background-size: contain;
 }
 
@@ -203,8 +203,24 @@ element.style {
 }
 
 span {
-    font-size: 10vh;
+    font-size: 9vh;
     font-weight: bold;
     text-align: center;
-    margin-left: 1vw;
+    margin-left: .5vw;
 }
+@media only screen and (max-width: 860px) {
+    #main {
+        margin-top: 30%;
+        width: 440px;
+        height: 440px;
+    }
+    .box {
+        height:22px;
+        width:22px;
+    }
+    span{
+        font-size:7vh;
+    }
+  
+}
+
