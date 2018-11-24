@@ -200,6 +200,7 @@ span {
     text-align: center;
     margin-left: .5vw;
 }
+
 @media only screen and (max-width: 860px) {
     #main {
         margin-top: 30%;
